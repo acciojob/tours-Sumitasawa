@@ -18,7 +18,7 @@ function App() {
       setIsLoading(false);
     }
   };
-  
+
   const removeTour = (id) => {
     const newTours = tours.filter((tour) => tour.id !== id);
     setTours(newTours);
@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <main>
+    <main id="main"> 
       <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
