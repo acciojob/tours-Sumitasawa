@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Tours from "./Tours";
-const url = "https://cors-anywhere.herokuapp.com/https://course-api.com/react-tours-project/";
+
+const url =
+  "https://cors-anywhere.herokuapp.com/https://course-api.com/react-tours-project/";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [tours, setTours] = useState([]);
+
   const fetchTours = async () => {
     setIsLoading(true);
     try {
@@ -32,7 +35,7 @@ function App() {
 
   if (tours.length === 0) {
     return (
-      <main>
+      <main id="main">
         <h2>No Tours Left</h2>
         <button onClick={fetchTours}>Refresh</button>
       </main>
@@ -40,7 +43,7 @@ function App() {
   }
 
   return (
-    <main id="main"> 
+    <main id="main">
       <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
